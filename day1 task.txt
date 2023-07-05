@@ -1,0 +1,29 @@
+1.Difference between HTTP1.1 VS HTTP2
+Ans.
+HTTP1.1 and HTTP2 are different versions of the hyper text transfer protocol used to transfering data over the web.
+HTT1.1:
+1.HTTP1.1 relies on single connection per request.
+2.It uses a text based protocol,which is human readable but less efficient formachines process.
+3.It does not compress headers,and each request includes significant amount of redundant data.
+HTTP2:
+1.HTTP2 introduced multiplexing ,where multiple requests can be sent and received on a single connection simunltaneously.
+2.this allows for more efficient and faster comunication between the clent and server
+3.It uses binary protocol,which is more compact and easier to prase and improved performance.
+4.It inclueds header compresion which reduces the size of the headers.
+5.HTTP2 introduce a feature caled server push.
+6.HTTP2 Allows prioritization of requests.
+
+
+
+
+2.Write a blog about objects and its internal representation in Javascript
+Ans.
+1.Objects are collections of key value pairs
+2.Each value can be of any data type including other objects ,functions,or arrays.
+3.objects can be created using object literals,constructors,es6 classes
+4.we can add a new property or remove a property while during the execution.
+Internal representation in Javascript:
+1.internal representation of object is based on "Hash table" .
+2.Each object property is internally stored   as a key value pair in a hash table
+3.Enuarating object properties  we have various methods like object keys,for in loop,object.values () using these methods we can iterate over the object properties.
+
