@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//1.For given json data iterate using for loop, forin loop,for off loop
+fetch("https://restcountries.com/v3.1/all")
+  .then(response => response.json())
+  .then(data => {
+    // Using for loop
+    console.log("--- for loop ---");
+    for (let i = 0; i < data.length; i++) {
+      console.log(data[i]);
+    }
+    
+    // Using for...in loop
+    console.log("--- for...in loop ---");
+    for (let index in data) {
+      console.log(data[index]);
+    }
+    
+    // Using for...of loop
+    console.log("--- for...of loop ---");
+    for (let country of data) {
+      console.log(country);
+    }
+  })
+  .catch(error => console.log("Error fetching data:", error));
+
+//-----------------------------------------------------------------------------------//
+//create your own resume data in json data format
+[{
+    "firstname": "Aswini",
+    "lastname":"Annameti",
+    "age":"24",
+    "mobile no":"6300265181",
+    "e-mail":"annametiaswini.1999@gmail.com",
+    "gender":"female",
+    "nationality":"Indian",
+    "religion":"hindu",
+    "father-name":"ramanaiah",
+    "mother-name":"Subbamma",
+    "languages":[
+        {
+            "name":"telugu",
+            "level":"expert",
+            "type":"SRW"
+        },
+        {
+            "name":"English",
+            "level":"Proficiency",
+            "type":"SRW"
+        },
+        {
+            "name":"Hindi",
+            "level":"beginner",
+            "type":"Reading"
+        }
+    ],
+    "hobbies":[{
+        "name":"playing shuttle",
+        "level":"medium"
+    },
+    {
+      "name":"reading",
+      "level":"proficient"
+
+    },
+    {
+        "name":"listening music",
+        "name":"watching-tv"
+        
+         
+    },
+
+],
+    "education":[
+        {
+          "name":"ssc",
+          "school":"ZPhighschool sreedhanammalli",
+          "percent":"90",
+          "year":"2013"
+        },
+        {
+            "name":"inter",
+            "branch":"MPC",
+            "percent":"90",
+            "college":"vikram junior college",
+            "year":"2016"
+
+        },
+        {
+            "name":"degree",
+            "branch":"bsc",
+            "percent":"80",
+            "college":"viswam degree college",
+            "year":"2022"
+
+        }
+    ],
+
+    "skills":[
+        {
+            "name":"react",
+            "coding-level":"beginner",
+            "work-experience":"null"
+        },
+        {
+            "name":"javascript",
+            "coding-level":"beginner",
+            "work-experience":"null"
+        },
+        {
+            "name":"html",
+            "coding-level":"medium",
+            "work-experience":"null"
+        },
+        {
+            "name":"css",
+            "coding-level":"medium",
+            "work-experience":"null"
+        },
+        {
+            "name":"java",
+            "coding-level":"beginner",
+            "work-experience":"null"
+        },
+        {
+            "name":"python",
+            "coding-level":"beginner",
+            "work-experience":"null"
+        },
+        {
+            "name":"angular",
+            "coding-level":"beginner",
+            "work-experience":"null"
+        },
+        {
+            "name":"bootstrap",
+            "coding-level":"beginner",
+            "work-experience":"null"
+        },
+        {
+            "name":"typescript",
+            "coding-level":"beginner",
+            "work-experience":"null"
+        },
+        {
+            "name":"meterial-ui",
+            "coding-level":"beginner",
+            "work-experience":"null"
+        },
+        {
+            "name":"redux",
+            "coding-level":"beginner",
+            "work-experience":"null"
+        }
+    ],
+    "projects":[{
+        "name":"nyaka",
+        "duration":"2years"
+    },
+    {
+        "name":"netmeds",
+        "duration":"1year"
+    }
+],
+
+    
+
+}]
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
