@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// var numbers=[1,2,3,4,5,6,7,8,9,10]
+// (function(){
+//     for (var i = 0 ; i<numbers.length; i++){
+//         if(numbers[i]% 2!==0){
+//             console.log(numbers[i])
+//         }
+//     }
+// })()
+
+
+// var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+
+
+
+
+//1.Print odd numbers in an array
+
+(function(n) {
+  const numbers = [];
+  let i = 1;
+
+  while (numbers.length < n) {
+    if (i % 2 !== 0) {
+      numbers.push(i);
+    }
+    i++;
+  }
+
+  console.log(numbers);
+})(10);
+
+
+//2.Convert all the strings to title caps in a string array
+function convertToTitleCaps(stringArray) {
+  var titleCapsArray = [];
+  for (var i = 0; i < stringArray.length; i++) {
+    var words = stringArray[i].toLowerCase().split(" ");
+    for (var j = 0; j < words.length; j++) {
+      words[j] = words[j][0].toUpperCase() + words[j].substr(1);
+    }
+    titleCapsArray.push(words.join(" "));
+  }
+  return titleCapsArray;
+}
+
+var myStringArray = ["hello world", "welcome to guvi", "zen class"];
+var result = convertToTitleCaps(myStringArray);
+console.log(result);
+
+//3.Sum of all numbers in an array
+const nums = [1, 2, 3, 4, 5];
+
+const sum = (function(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total;
+})(nums);
+
+console.log(sum);
+
+
+//4.Return all the prime numbers in an array
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const primeNumbers = (function(arr) {
+  const isPrime = function(number) {
+    if (number <= 1) {
+      return false;
+    }
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  };
+
+  const primeNums = [];
+  for (let i = 0; i < arr.length; i++) {
+    const num = arr[i];
+    if (isPrime(num)) {
+      primeNums.push(num);
+    }
+  }
+  return primeNums;
+})(numbers);
+
+console.log(primeNumbers);
+
+//5.Return all the palindromes in an array
+const words = ["level", "hello", "radar", "world", "madam"];
+
+const palindromes = (function(arr) {
+  const isPalindrome = function(word) {
+    const reversedWord = word.split("").reverse().join("");
+    return word === reversedWord;
+  };
+
+  const palindromeWords = [];
+  for (let i = 0; i < arr.length; i++) {
+    const word = arr[i];
+    if (isPalindrome(word)) {
+      palindromeWords.push(word);
+    }
+  }
+  return palindromeWords;
+})(words);
+
+console.log(palindromes);
+
+//6.Return median of two sorted arrays of the same size.
+
+const array1 = [1, 3, 5];
+const array2 = [2, 4, 6];
+
+const median = (function(arr1, arr2) {
+  const mergedArray = arr1.concat(arr2);
+  const sortedArray = mergedArray.sort((a, b) => a - b);
+  const length = sortedArray.length;
+  const midIndex = Math.floor(length / 2);
+  
+  if (length % 2 === 0) {
+    return (sortedArray[midIndex - 1] + sortedArray[midIndex]) / 2;
+  } else {
+    return sortedArray[midIndex];
+  }
+})(array1, array2);
+
+console.log(median);
+
+
+//7.Remove duplicates from an array
+const array = [1, 2, 2, 3, 4, 4, 5, 5];
+
+const uniqueArray = (function(arr) {
+  const uniqueValues = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!uniqueValues.includes(arr[i])) {
+      uniqueValues.push(arr[i]);
+    }
+  }
+  return uniqueValues;
+})(array);
+
+console.log(uniqueArray);
+
+//8.Rotate an array by k times
+
+const arr = [1, 2, 3, 4, 5];
+const k = 3;
+
+const rotatedArray = (function(arr, rotations) {
+  const rotated = arr.slice(rotations).concat(arr.slice(0, rotations));
+  return rotated;
+})(arr, k);
+
+console.log(rotatedArray);
+
+//Do the below programs in arrow functions.
+//1.Print odd numbers in an array
+
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const printOddNumbers = (arr) => {
+  for (const index in arr) {
+    const number = arr[index];
+    if (number % 2 !== 0) {
+      console.log(number);
+    }
+  }
+};
+
+printOddNumbers(number);
+
+//2.Convert all the strings to title caps in a string array
+
+const stringArray = ["hello world", "welcome to guvi", "zen class"];
+
+const titleCapsArray = stringArray.map((string) => {
+  const words = string.toLowerCase().split(" ");
+  const capitalizedWords = words.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
+  return capitalizedWords.join(" ");
+});
+
+console.log(titleCapsArray);
+
+//3.Sum of all numbers in an array
+const numb = [1, 2, 3, 4, 5];
+
+const total = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+console.log(total);
+
+//4.Return all the prime numbers in an array
+const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const primeNum = numbers.filter((num) => {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+});
+
+console.log(primeNum);
+
+//5.Return all the palindromes in an array
+
+const word = ["level", "hello", "radar", "world", "madam"];
+
+const palindrome = word.filter((word) => {
+  const reversedWord = word.split("").reverse().join("");
+  return word === reversedWord;
+});
+
+console.log(palindrome);
+
+    </script>
+</body>
+</html>
