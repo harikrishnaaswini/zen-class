@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//1.Write a “person” class to hold all the details.
+
+class Person {
+  constructor(fname,lname ,age, gender,qualification,mothername,fathername,status,employment,mobilenumber, address, email) {
+    this.fname = fname;
+    this.lname=lname;
+    this.age = age;
+    this.gender = gender;
+    this.qualification=qualification;
+    this.mothername=mothername;
+    this.fathername=fathername;
+    this.status=status;
+    this.employment=employment;
+    this.mobilenumber=mobilenumber;
+    this.address = address;
+    this.email = email;
+  }
+
+  // Method to display person details
+  displayDetails() {
+    console.log('FName:', this.fname);
+    console.log('LName:', this.lname);
+    console.log('Age:', this.age);
+    console.log('Gender:', this.gender);
+    console.log('Qualification:', this.qualification);
+    console.log('Mothername:', this.mothername);
+    console.log('Fathername:', this.fathername);
+    console.log('Status:', this.status);
+    console.log('Employment:', this.employment);
+    console.log('Mobilenumber:', this.mobilenumber);
+    console.log('Address:', this.address);
+    console.log('Email:', this.email);
+  }
+}
+const person1=new Person(
+    'Annameti',
+    'Aswini',
+    '24',
+    'Female',
+    'BSC',
+    'Subbamma',
+    'Raanaiah',
+    'Middleclass',
+    'Working',
+    '3456789987',
+    'Nellore',
+    'annametiaswini.1999@gmail.com'
+)
+
+person1.displayDetails() 
+
+
+//2.write a class to calculate the uber price. 
+class UberPriceCalculator {
+  constructor(baseFare, costPerKilometer, costPerMinute) {
+    this.baseFare = baseFare;
+    this.costPerKilometer = costPerKilometer;
+    this.costPerMinute = costPerMinute;
+  }
+
+  calculatePrice(distanceInKilometers, timeInMinutes) {
+    return this.baseFare + distanceInKilometers * this.costPerKilometer + timeInMinutes * this.costPerMinute;
+  }
+}
+
+const uberPriceCalculator = new UberPriceCalculator(2.5, 1.2, 0.3); // Example pricing parameters
+
+// Calculate price for a ride of 8 kilometers and 20 minutes
+const totalFare = uberPriceCalculator.calculatePrice(8, 20);
+console.log('Total Fare:', totalFare);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
